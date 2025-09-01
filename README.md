@@ -1,26 +1,64 @@
 # Contenido
 
-1. [Introducción](#introduccion)
-2. [Tecnologias](#tecnologias)
-3. [Instalacion](#instalacion)
-4. [Ejecucion](#ejecución)
-5. [Deploy local](#deploy-local)
-6. [Test unitarios](#test-unitarios)
-7. [Swagger](#swagger)
+1. [Introducción](#introducción)
+2. [Requerimientos funcionales](#requerimientos-funcionales)
+3. [Requerimientos no funcionales](#requerimientos-no-funcionales)
+4. [Tecnologías](#tecnologías)
+5. [Arquitectura](#arquitectura)
+6. [Instalación](#instalación)
+7. [Ejecución](#ejecución)
+8. [Deploy local](#deploy-local)
+9. [Test unitarios](#test-unitarios)
+10. [Swagger](#swagger)
 
-# Introduccion
+# Introducción
 
-Api .................
+La tarea consiste en construir APIs que permitan gestionar información sobre **empresas** y sus **transferencias**.  
+La solución debe ser clara, mantenible, escalable y escrita con buenas prácticas:
 
-# Tecnologias
+- Clean Code  
+- Separación de responsabilidades  
+- Claridad en los nombres  
+- Arquitectura modular  
 
-- **Framework:** NestJS
-- **Lenguaje:** TypeScript
-- **Base de Datos:** PostgreSQL
+# Requerimientos funcionales
 
-# Instalacion
+Se deben implementar los siguientes **endpoints**:
 
-`npm install`
+1. Obtener las empresas que realizaron transferencias en el último mes.  
+2. Obtener las empresas que se adhirieron en el último mes.  
+3. Registrar la adhesión de una nueva empresa:  
+   - Empresa Pyme.  
+   - Empresa Corporativa.  
+
+# Requerimientos no funcionales
+
+- La API debe estar escrita en **NestJS** (standalone).  
+- No se permite el uso de **Docker**.  
+- No es necesario desplegar la API, pero debe poder ejecutarse localmente.  
+- Persistencia: puede usarse **PostgreSQL**, archivo JSON o almacenamiento en memoria.  
+- En caso de usar BD, se debe incluir una instancia embebida, simulada o en Cloud.  
+- Arquitectura clara (**Clean Architecture / Hexagonal** deseable).  
+
+# Tecnologías
+
+- **Framework:** NestJS  
+- **Lenguaje:** TypeScript  
+- **Base de Datos:** PostgreSQL (o alternativa en memoria)  
+
+# Arquitectura
+
+La aplicación sigue principios de **Clean Architecture**, asegurando:  
+
+- Separación entre dominio, aplicación e infraestructura.  
+- Capas desacopladas para facilitar testeo y mantenibilidad.  
+- Posibilidad de reemplazar adaptadores (ej. persistencia en memoria ↔ PostgreSQL) sin modificar la lógica de negocio.  
+
+# Instalación
+
+```bash
+npm install
+```
 
 # Ejecución
 
