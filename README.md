@@ -36,7 +36,7 @@ Se deben implementar los siguientes **endpoints**:
 - La API debe estar escrita en **NestJS** (standalone).  
 - No se permite el uso de **Docker**.  
 - No es necesario desplegar la API, pero debe poder ejecutarse localmente.  
-- Persistencia: puede usarse **PostgreSQL**, archivo JSON o almacenamiento en memoria.  
+- Se puede usar base de datos local, un archivo JSON o persistencia en memoria. 
 - En caso de usar BD, se debe incluir una instancia embebida, simulada o en Cloud.  
 - Arquitectura clara (**Clean Architecture / Hexagonal** deseable).  
 
@@ -44,15 +44,11 @@ Se deben implementar los siguientes **endpoints**:
 
 - **Framework:** NestJS  
 - **Lenguaje:** TypeScript  
-- **Base de Datos:** PostgreSQL (o alternativa en memoria)  
+- **Base de Datos:** PostgreSQL
 
 # Arquitectura
 
-La aplicación sigue principios de **Clean Architecture**, asegurando:  
-
-- Separación entre dominio, aplicación e infraestructura.  
-- Capas desacopladas para facilitar testeo y mantenibilidad.  
-- Posibilidad de reemplazar adaptadores (ej. persistencia en memoria ↔ PostgreSQL) sin modificar la lógica de negocio.  
+La aplicación sigue principios de **Clean Architecture**, asegurando:   
 
 # Instalación
 
@@ -81,3 +77,4 @@ Local: `npm run start:dev`
 # Swagger
 
 http://localhost:${port}/docs`
+
